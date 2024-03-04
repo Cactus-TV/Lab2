@@ -72,7 +72,7 @@ for i in np.nditer(arr_sizes):
     print('Saved ', len(date_wedding), "to csv!")
 
 
-# In[13]:
+# In[53]:
 
 
 class Obj:
@@ -95,6 +95,9 @@ class Obj:
     
     def __gt__(self, other): # >
         return (self.num_reg, self.gr_fname, self.date_w) > (other.num_reg, other.gr_fname, other.date_w)
+    
+    def __eq__(self, other): # ==
+        return (self.num_reg, self.gr_fname, self.date_w) == (other.num_reg, other.gr_fname, other.date_w)
     
     def pr(self): # вывод в консоль
         print(f"{self.gr_fname}, {self.date_gr}, {self.br_fname}, {self.date_br}, {self.date_w}, {self.num_reg}")
@@ -231,7 +234,7 @@ plt.show()
 # 3) Выполнить поиск 7-10 раз на массивах разных размерностей от 100 и более (но не менее, чем до 100000). Засечь (программно) время поиска для  всех способов. По полученным точкам  построить сравнительные графики зависимости времени поиска от размерности  массива. 
 # 4) Записать входные данные в ассоциативный массив multimap<key,  object> и сравнить время поиска по ключу в нем с временем поиска из п.3. Добавить данные по времени поиска в ассоциативном массиве в общее сравнение с остальными способами и построить график зависимости времени поиска от размерности массива.
 
-# In[41]:
+# In[62]:
 
 
 class BTreeNode: # бинарное дерево
@@ -247,12 +250,12 @@ class BTreeNode: # бинарное дерево
             self.content = content
         elif value < self.value:
             if self.left is None:
-                self.left = TreeNode(value, content)
+                self.left = BTreeNode(value, content)
             else:
                 self.left.insert(value, content)
         else:
             if self.right is None:
-                self.right = TreeNode(value, content)
+                self.right = BTreeNode(value, content)
             else:
                 self.right.insert(value, content)
 
@@ -426,9 +429,10 @@ class HashTable: #хэш таблица
         found = False
         for idx, element in enumerate(self.arr[hsh]):
             if len(element) == 2 and element[0] == key:
-                self.arr[hsh][idx] = (key, value)
-                found = True
-                break
+                if element[1] == value:
+                    self.arr[hsh][idx] = (key, value)
+                    found = True
+                    break
         if not found and len(self.arr[hsh]) > 0:
             self.arr[hsh].append((key, value))
             self.__collisions += 1
@@ -457,7 +461,7 @@ class HashTable: #хэш таблица
             print(i)
 
 
-# In[42]:
+# In[63]:
 
 
 print("Getting data...\n")
@@ -471,7 +475,7 @@ for i in np.nditer(arr_sizes):
     arr = df.to_numpy().tolist()[1:]
     arr_btree.append(TreeNode())
     arr_rbtree.append(RBTree())
-    arr_htable.append(HashTable(len(df.index)))
+    arr_htable.append(HashTable(100))#len(df.index)
     arr_multimap.append(dict())
     for row in arr:
         obj = Obj(row) # создаём наш объект (из Лабораторной 1)
@@ -482,7 +486,7 @@ for i in np.nditer(arr_sizes):
 print("\nCreating data structures done!\n")
 
 
-# In[43]:
+# In[64]:
 
 
 print("Start computing...\n")
@@ -532,7 +536,7 @@ for i in range(len(arr_sizes)):
 print("\nComputing done!")
 
 
-# In[46]:
+# In[65]:
 
 
 plt.plot(arr_sizes, arr_btree_time, label='BTree')
@@ -545,7 +549,7 @@ plt.legend()
 plt.show()
 
 
-# In[48]:
+# In[67]:
 
 
 plt.plot(arr_sizes, [log(i) for i in arr_btree_time], label='BTree')
@@ -560,7 +564,7 @@ plt.legend()
 plt.show()
 
 
-# In[45]:
+# In[66]:
 
 
 plt.plot(arr_sizes, arr_htable_collisions, label='HashTable')
