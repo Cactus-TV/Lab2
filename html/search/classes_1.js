@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['obj_0',['Obj',['../classlaba2_1_1_obj.html',1,'laba2']]]
+  ['hashtable_0',['HashTable',['../classlaba2_1_1_hash_table.html',1,'laba2']]]
 ];

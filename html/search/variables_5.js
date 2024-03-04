@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['file_0',['file',['../namespacelaba2.html#a40a5d58ffa6e88aa578d6683ac413105',1,'laba2']]]
+  ['gr_5ffname_0',['gr_fname',['../classlaba2_1_1_obj.html#ae30e741efaac45da1951d0cf0bf046bf',1,'laba2::Obj']]]
 ];

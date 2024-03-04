@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['val_0',['val',['../classlaba2_1_1_r_b_node.html#acb906433e1289aa1c251dc5057746a88',1,'laba2.RBNode.val'],['../namespacelaba2.html#acb906433e1289aa1c251dc5057746a88',1,'laba2.val']]],
-  ['value_1',['value',['../classlaba2_1_1_tree_node.html#afcc7a4b78ecd8fa7e713f8cfa0f51017',1,'laba2.TreeNode.value'],['../namespacelaba2.html#afcc7a4b78ecd8fa7e713f8cfa0f51017',1,'laba2.value']]]
+  ['table_0',['table',['../namespacelaba2.html#ab172ed3d3d31ff02fc5f798fe7e1bfb8',1,'laba2']]],
+  ['times_1',['times',['../namespacelaba2.html#aad4f4c24ba75d1526ad9a49089a2d067',1,'laba2']]],
+  ['traversal_2',['traversal',['../classlaba2_1_1_b_tree_node.html#a228a9dfcefc8ca12c8bc0f6512b2b555',1,'laba2::BTreeNode']]]
 ];

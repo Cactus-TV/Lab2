@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hashtable_0',['HashTable',['../classlaba2_1_1_hash_table.html',1,'laba2']]]
+  ['btreenode_0',['BTreeNode',['../classlaba2_1_1_b_tree_node.html',1,'laba2']]]
 ];
